@@ -14,7 +14,7 @@ public class MainChain {
     String[] med1={"120","90","100"};
     Block genesisBlock;
        genesisBlock = new Block(0, 1, "Vivek", 19, med1);
-       
+    dataChain.put(genesisBlock.getName(), genesisBlock.getMapValue());
     
    }
 }
