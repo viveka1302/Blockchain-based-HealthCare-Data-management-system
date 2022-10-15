@@ -1,4 +1,3 @@
-
 package BlockchainProto;
 
 import java.util.Arrays;
@@ -14,6 +13,7 @@ public class Block {
     private final int age;
     private final String[] medData;
     private final int blockHash;
+    private final Object mapValue[];
     
     /**
      *
@@ -32,7 +32,10 @@ public class Block {
         this.medData=medData;
         Object contents[]={id, name, age, medData};
         Object hashArray[]={contents,previousHash};
+        
         this.blockHash=Arrays.hashCode(hashArray);
+        Object valOfMap[]={hashArray, blockHash};
+        this.mapValue=valOfMap;
     }
     public int getBlockHash(){
         return blockHash;
@@ -49,8 +52,11 @@ public class Block {
     public int getAge(){
         return age;
     }
-    public String[] medData(){
+    public String[] getMedData(){
         return medData;
+    }
+    public Object[] getMapValue(){
+        return mapValue;
     }
     
     
