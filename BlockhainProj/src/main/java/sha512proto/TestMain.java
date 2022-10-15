@@ -1,9 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package sha512proto;
 
+import BlockchainProto.*;
 import java.io.IOException;
 
 /**
@@ -19,5 +17,7 @@ public class TestMain {
         BinaryDataFromSer bdfs= new BinaryDataFromSer();
         String binData= bdfs.SerBin();
         
+        MainChain mc= new MainChain();
+        mc.chain();
     }
 }
