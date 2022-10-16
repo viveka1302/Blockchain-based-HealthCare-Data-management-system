@@ -29,7 +29,8 @@ public class MainChain {
     /**
      *can be called innumerable times to add next block to the blockchain
      */
-    public void nextBlock(){
+    public void nextBlock(int previousHash, int id, String name, int age, String[] medNext){
+        this.index= this.index+1;
         
     }
     
