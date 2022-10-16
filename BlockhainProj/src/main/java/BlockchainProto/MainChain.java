@@ -9,13 +9,18 @@ import java.util.HashMap;
  * @author VIVEK
  */
 public class MainChain {
-   public void chain(){
-    HashMap<String,Object[]> dataChain;
-       dataChain = new HashMap<String,Object[]>();
-    String[] med1={"120","90","100"};
+
+    private final HashMap<Integer,Object[]> dataChain;
+    /**
+     *Constructor to initialize a Genesis Block.
+     */
+    public MainChain(){
+    dataChain = new HashMap<>();
+    String[] med1={"0","0","0"};
     Block genesisBlock;
-       genesisBlock = new Block(0, 1, "Vivek", 19, med1);
-    dataChain.put(genesisBlock.getName(), genesisBlock.getMapValue());
-    System.out.println("At Vivek: "+Arrays.deepToString(dataChain.get("Vivek")));
+       genesisBlock = new Block(0, 0, 1, "XYZ", 0, med1);
+    dataChain.put(genesisBlock.getID(), genesisBlock.getMapValue());
+    System.out.println("At Genesis block: "+Arrays.deepToString(dataChain.get(1)));
    }
+    
 }
