@@ -14,17 +14,18 @@ public class Block {
     private final String[] medData;
     private final int blockHash;
     private final Object mapValue[];
-    
+    private final int index;
     /**
      *
+     * @param index
      * @param previousHash
      * @param id
      * @param name
      * @param age
      * @param medData
      */
-    public Block(int previousHash, int id, String name, int age, String[] medData){
-
+    public Block(int index, int previousHash, int id, String name, int age, String[] medData){
+        this.index=index;
         this.previousHash= previousHash;
         this.id= id;
         this.name=name;
@@ -57,6 +58,9 @@ public class Block {
     }
     public Object[] getMapValue(){
         return mapValue;
+    }
+    public int getIndex(){
+        return index;
     }
     
     
