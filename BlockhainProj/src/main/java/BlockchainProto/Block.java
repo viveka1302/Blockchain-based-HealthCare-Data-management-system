@@ -31,13 +31,14 @@ public class Block {
         this.name=name;
         this.age=age;
         this.medData=medData;
-        Object contents[]={id, name, age, medData};
+        Object contents[]={index,id, name, age, medData};
         Object hashArray[]={contents,previousHash};
         
         this.blockHash=Arrays.hashCode(hashArray);
         Object valOfMap[]={hashArray, blockHash};
         this.mapValue=valOfMap;
     }
+    
     public int getBlockHash(){
         return blockHash;
     }
