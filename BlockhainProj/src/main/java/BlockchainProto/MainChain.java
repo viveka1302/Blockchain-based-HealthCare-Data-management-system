@@ -13,10 +13,12 @@ public final class MainChain {
 
     private final HashMap<Integer,Object[]> dataChain;
     private int index;
+    
     /**
      *Constructor to initialize a Genesis Block.
      */
     @SuppressWarnings("empty-statement")
+    
     public MainChain()
     {
     Scanner sc= new Scanner(System.in);
@@ -75,16 +77,23 @@ public final class MainChain {
      * @param id
      * @param name
      * @param age
-     * @param me
+     * @param medNext
      * @return dNext
      */
-    public int nextBlock(String previousHash, int id, String name, int age, String[] medNext){
+    private int nextBlock(String previousHash, int id, String name, int age, String[] medNext){
+        if(previousHash==dataChain.get(this.index)[1]){
+            return 0;
+        }
         this.index= this.index+1;
         int preHash= Integer.parseInt(previousHash);
         Block newBlock;
         newBlock = new Block(this.index,preHash, id, name, age, medNext);
-        dataChain.put(index, newBlock.getMapValue());
+        dataChain.put(newBlock.getIndex(), newBlock.getMapValue());
         return 1;
+    }
+    
+    public HashMap getDataChain(){
+        return dataChain;
     }
     
 }
