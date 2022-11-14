@@ -1,10 +1,10 @@
-package com.health.blockchainproj.HealthChain;
+package HealthChain.project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HealthChainApplicationTests {
+class ProjectApplicationTests {
 
 	@Test
 	void contextLoads() {
