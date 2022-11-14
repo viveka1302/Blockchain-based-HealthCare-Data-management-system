@@ -1,13 +1,13 @@
-package com.health.blockchainproj.HealthChain;
+package HealthChain.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HealthChainApplication {
+public class ProjectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HealthChainApplication.class, args);
+		SpringApplication.run(ProjectApplication.class, args);
 	}
 
 }
