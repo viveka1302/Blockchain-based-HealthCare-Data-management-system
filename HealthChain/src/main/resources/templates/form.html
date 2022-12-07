@@ -1,0 +1,25 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head><title>Form filling</title></head>
+    <body>
+    <form action="/patients" method="post">
+    <label>ID:</label>
+    <input type="number" name="ID" />
+    <label>Name:</label>
+    <input type="text" name="name" />
+    <label>Age:</label>
+    <input type='number' name='Age'/> 
+    <label>Blood Pressure:</label>
+    <input type="text" name="Blood Pressure" />
+    <label>Pulse:</label>
+    <input type='text' name="Pulse"/>
+    <label>Oxygen Level:</label>
+    <input type='text' name="Oxygen Level"/>
+    <a href="/form">
+    <input type="submit" value="Submit" />
+    </a>
+</form>
+        <a href="/search"><button>SEARCH FOR PATIENT</button></a>
+    </body>
+
+</html>
