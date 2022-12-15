@@ -1,0 +1,11 @@
+BlockchainProto\Block.class
+BlockchainProto\MainChain.class
+com\health\blockhainproj\resources\JakartaEE9Resource.class
+com\health\blockhainproj\JakartaRestConfiguration.class
+sha512proto\TestReadSer.class
+sha512proto\Reciever.class
+sha512proto\BinaryDataFromSer.class
+sha512proto\binserFileGenerator.class
+sha512proto\DataObject.class
+sha512proto\TestMain.class
+sha512proto\keccakp.class

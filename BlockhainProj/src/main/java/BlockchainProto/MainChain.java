@@ -95,5 +95,15 @@ public final class MainChain {
     public HashMap getDataChain(){
         return dataChain;
     }
-    
+
+    /**
+     *Print function
+     */
+    public void printMap(){
+        HashMap<Integer, Object[]> finalData= getDataChain();
+        int loopsize=finalData.size();
+        for(int i=1; i<loopsize; i++){
+            System.out.println(Arrays.deepToString(finalData.get(i)));
+        }
+    }
 }
