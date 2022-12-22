@@ -1,6 +1,7 @@
 
 package BlockchainProto;
 
+import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -13,6 +14,7 @@ public final class MainChain {
 
     private final HashMap<Integer,Object[]> dataChain;
     private int index;
+    private Timestamp timestamp;
     
     /**
      *Constructor to initialize a Genesis Block.
@@ -28,7 +30,7 @@ public final class MainChain {
     String[] med1={"0","0","0"};
     //1st block in the chain
     Block genesisBlock;
-       genesisBlock = new Block( this.index, 0, 1, "XYZ", 0, med1);
+       genesisBlock = new Block( this.index, 0, 1, "XYZ", 0, med1, null);
     //inserting genesisBlock in dataChain.
     dataChain.put(genesisBlock.getIndex(), genesisBlock.getMapValue());
     System.out.println("At Genesis block: "+Arrays.deepToString(dataChain.get(0)));
@@ -51,8 +53,9 @@ public final class MainChain {
         System.out.print(input_question[i]);
         med_next[i]=sc.nextLine();
     }
+    timestamp = new Timestamp(System.currentTimeMillis());
     int check;
-        check = nextBlock(valMap[1].toString(),id_next,name_next,age_next, med_next);
+        check = nextBlock(valMap[1].toString(),id_next,name_next,age_next, med_next, timestamp);
     if(check==1)
         System.out.println("Block added successfully.");
     else{
@@ -80,14 +83,14 @@ public final class MainChain {
      * @param medNext
      * @return dNext
      */
-    private int nextBlock(String previousHash, int id, String name, int age, String[] medNext){
+    private int nextBlock(String previousHash, int id, String name, int age, String[] medNext, Timestamp ts){
         if(previousHash==dataChain.get(this.index)[1]){
             return 0;
         }
         this.index= this.index+1;
         int preHash= Integer.parseInt(previousHash);
         Block newBlock;
-        newBlock = new Block(this.index,preHash, id, name, age, medNext);
+        newBlock = new Block(this.index,preHash, id, name, age, medNext, ts);
         dataChain.put(newBlock.getIndex(), newBlock.getMapValue());
         return 1;
     }
@@ -95,5 +98,15 @@ public final class MainChain {
     public HashMap getDataChain(){
         return dataChain;
     }
-    
+
+    /**
+     *Print function
+     */
+    public void printMap(){
+        HashMap<Integer, Object[]> finalData= getDataChain();
+        int loopsize=finalData.size();
+        for(int i=1; i<loopsize; i++){
+            System.out.println(Arrays.deepToString(finalData.get(i)));
+        }
+    }
 }

@@ -17,7 +17,12 @@ public class TestMain {
         BinaryDataFromSer bdfs= new BinaryDataFromSer();
         String binData= bdfs.SerBin();
         */
+        MongoCon mGc= new MongoCon();
+        MyBackgroundMethod mbm= new MyBackgroundMethod();
+        mbm.setDaemon(true);
+        mbm.start();
         MainChain mc= new MainChain();
+        mc.printMap();
         
         
     }
