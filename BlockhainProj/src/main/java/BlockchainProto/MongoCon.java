@@ -4,7 +4,6 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import java.sql.Timestamp;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -36,19 +35,18 @@ public class MongoCon {
         // collection.insertOne(doc); 
     }
     // Iterate over the key-value pairs in the hashMap
-public Timestamp makeEntry(HashMap<Integer,Object[]> para){
+public void makeEntry(HashMap<Integer,Object[]> para){
     for (Map.Entry<Integer, Object[]> entry : para.entrySet()) {
     String key = entry.getKey().toString();
-    Object value = entry.getValue();
-
+    Object[] value = entry.getValue();
+    
 // Create a new MongoDB document with the key-value pair
     Document doc = new Document(key, value);
 
 // Insert the document into the desired collection in the database
     collection.insertOne(doc);
     }
-    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        return timestamp;
+      
     
 }
 }

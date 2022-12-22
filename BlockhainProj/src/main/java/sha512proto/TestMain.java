@@ -3,7 +3,6 @@ package sha512proto;
 
 import BlockchainProto.*;
 import java.io.IOException;
-import java.sql.Timestamp;
 
 /**
  *
@@ -19,9 +18,12 @@ public class TestMain {
         String binData= bdfs.SerBin();
         */
         MongoCon mGc= new MongoCon();
+        MyBackgroundMethod mbm= new MyBackgroundMethod();
+        mbm.setDaemon(true);
+        mbm.start();
         MainChain mc= new MainChain();
         mc.printMap();
-        Timestamp ts= mGc.makeEntry(mc.getDataChain());
+        
         
     }
 }
